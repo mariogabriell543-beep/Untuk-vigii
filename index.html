@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebuah Website Penting ❤️</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg,#ff758c,#ffb199);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  overflow: hidden;
+}
+.card {
+  width: 92%;
+  max-width: 480px;
+  min-height: 500px;
+  background: white;
+  border-radius: 30px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,.2);
+  position: relative;
+  overflow: hidden;
+}
+.page { display: none; animation: masuk .6s ease; }
+.page.active { display: block; }
+@keyframes masuk {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.emoji { font-size: 70px; }
+h1, h2 { color: #ff4f70; }
+p { line-height: 1.7; color: #555; }
+button {
+  border: none;
+  padding: 14px 24px;
+  margin: 8px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .2s;
+}
+button:hover { transform: scale(1.05); }
+.next { background: #ff4f70; color: white; }
+.secondary { background: #eee; }
+.progress {
+  height: 7px;
+  background: #eee;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.bar {
+  height: 100%;
+  width: 0%;
+  background: #ff4f70;
+  border-radius: 10px;
+  transition: .5s;
+}
+.big { font-size: 45px; font-weight: bold; color: #ff4f70; }
+#no { position: relative; transition: .2s; }
+.loading {
+  width: 100%;
+  height: 15px;
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.loading div {
+  height: 100%;
+  width: 0%;
+  background: #ff4f70;
+  transition: 2s;
+}
+.small { font-size: 13px; color: #999; }
+.heart {
+  position: fixed;
+  font-size: 25px;
+  animation: jatuh 4s linear forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+@keyframes jatuh {
+  from { transform: translateY(-50px) rotate(0); opacity: 1; }
+  to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="progress"><div class="bar" id="bar"></div></div>
+
+<div class="page active">
+<div class="emoji">👋</div>
+<h1>HALO KAMU!</h1>
+<p>Selamat datang di website yang sebenarnya nggak penting-penting amat...</p>
+<p>Tapi kalau kamu udah sampai sini, sayang banget kalau ditutup 😭</p>
+<button class="next" onclick="nextPage()">Buka aja 👀</button>
+</div>
+
+<div class="page">
+<div class="emoji">🤨</div>
+<h2>Tunggu dulu...</h2>
+<p>Sebelum lanjut, aku harus memastikan satu hal.</p>
+<p>Kamu beneran mau lanjut?</p>
+<button class="next" onclick="nextPage()">Iya</button>
+<button class="secondary" onclick="nextPage()">Nggak yakin 😭</button>
+</div>
+
+<div class="page">
+<div class="emoji">🧐</div>
+<h2>PERTANYAAN PENTING</h2>
+<p>Kalau kamu dikasih pilihan:</p>
+<p>🍕 Pizza gratis seumur hidup<br>atau<br>❤️ Sesuatu yang jauh lebih penting?</p>
+<button class="next" onclick="nextPage()">Yang penting ❤️</button>
+<button class="secondary" onclick="nextPage()">PIZZA 🍕</button>
+</div>
+
+<div class="page">
+<div class="emoji">😂</div>
+<h2>Jawabanmu...</h2>
+<p>Hmmmm...</p>
+<p>Jawabanmu akan dicatat oleh departemen perasaan.</p>
+<p>Departemen ini terdiri dari:<br>Aku.</p>
+<button class="next" onclick="nextPage()">Lanjut 😂</button>
+</div>
+
+<div class="page">
+<div class="emoji">📋</div>
+<h2>TES KEPRIBADIAN</h2>
+<p>Pilih salah satu:</p>
+<button class="next" onclick="nextPage()">Lucu 😂</button>
+<button class="secondary" onclick="nextPage()">Ganteng/cantik 😎</button>
+<p class="small">Jawaban salah sebenarnya nggak ada. Tapi aku tetap punya jawaban sendiri 😌</p>
+</div>
+
+<div class="page">
+<div class="emoji">🤔</div>
+<h2>SEDIKIT SERIUS...</h2>
+<p>Ada seseorang yang akhir-akhir ini sering kepikiran sama kamu.</p>
+<p>Orangnya mungkin dekat.</p>
+<p>Mungkin sering ngobrol sama kamu.</p>
+<p>Mungkin juga sedang bikin website aneh seperti ini.</p>
+<button class="next" onclick="nextPage()">Siapa? 👀</button>
+</div>
+
+<div class="page">
+<div class="emoji">🤫</div>
+<h2>RAHASIA...</h2>
+<p>Namanya belum boleh dikasih tahu.</p>
+<p>Tapi ciri-cirinya:</p>
+<p>• Sering kepikiran kamu<br>• Senang ngobrol sama kamu<br>• Kadang bingung mau ngomong apa<br>• Rela bikin website panjang cuma buat kamu</p>
+<button class="next" onclick="nextPage()">Kayaknya aku tahu 😳</button>
+</div>
+
+<div class="page">
+<div class="emoji">📡</div>
+<h2>MENCARI PETUNJUK...</h2>
+<p>Sistem sedang mencari identitas orang tersebut...</p>
+<div class="loading"><div id="load"></div></div>
+<p id="loadingText">0%</p>
+<button class="next" onclick="loading()">Mulai mencari 🔎</button>
+</div>
+
+<div class="page">
+<div class="emoji">🚨</div>
+<h2>HASIL PENCARIAN!</h2>
+<p>Identitas ditemukan.</p>
+<div class="big">99%</div>
+<p>Kemungkinan besar...</p>
+<h2>AKU 😭❤️</h2>
+<button class="next" onclick="nextPage()">Lanjut...</button>
+</div>
+
+<div class="page">
+<div class="emoji">💌</div>
+<h2>ADA SURAT</h2>
+<p>Sebenarnya dari tadi aku muter-muter ngomongin hal nggak jelas.</p>
+<p>Padahal ada satu hal yang pengen aku sampaikan.</p>
+<button class="next" onclick="nextPage()">Buka surat 💌</button>
+</div>
+
+<div class="page">
+<div class="emoji">💗</div>
+<h2>Untuk kamu...</h2>
+<p>Aku nggak tahu harus mulai dari mana.</p>
+<p>Tapi aku senang setiap kali bisa ngobrol sama kamu.</p>
+<p>Aku juga nggak mau bikin kamu merasa terpaksa.</p>
+<p>Aku cuma pengen jujur tentang perasaanku.</p>
+<button class="next" onclick="nextPage()">Masih ada...</button>
+</div>
+
+<div class="page">
+<div class="emoji">❤️</div>
+<h2>SEDIKIT LAGI...</h2>
+<p>Sebelum pertanyaan terakhir, aku kasih kamu waktu buat tarik napas dulu.</p>
+<div class="big" id="count">3</div>
+<p>Jangan kabur ya 😂</p>
+<button class="next" onclick="countdown()">Aku siap</button>
+</div>
+
+<div class="page">
+<div class="emoji">🥹</div>
+<h2>Oke...</h2>
+<p>Setelah perjalanan panjang, muter-muter nggak jelas, tes kepribadian, pencarian identitas, dan surat rahasia...</p>
+<p>Akhirnya sampai juga.</p>
+<button class="next" onclick="nextPage()">Lanjut ke pertanyaan terakhir ❤️</button>
+</div>
+
+<div class="page">
+<div class="emoji">💘</div>
+<h1>AKU MAU NANYA...</h1>
+<p>Aku suka sama kamu.</p>
+<p>Aku pengen lebih dekat sama kamu dan mengenal kamu lebih jauh.</p>
+<h2>Kamu mau nggak jalanin ini bareng aku? ❤️</h2>
+<button class="next" onclick="yes()">MAU ❤️</button>
+<button id="no" class="secondary" onclick="nope()">Nggak 😭</button>
+</div>
+
+<div class="page">
+<div class="emoji">🥳❤️</div>
+<h1>YEAYYYY!</h1>
+<p>Makasih udah jujur sama perasaan kamu.</p>
+<p>Aku seneng banget bisa sampai di halaman ini bareng kamu.</p>
+<h2>❤️❤️❤️</h2>
+<p>Semoga setelah website ini, ada banyak cerita seru yang bisa kita buat bareng.</p>
+</div>
+
+<div class="page">
+<div class="emoji">🥲</div>
+<h2>Nggak apa-apa ❤️</h2>
+<p>Makasih udah jujur. Aku tetap menghargai jawaban kamu.</p>
+<p>Semoga kita tetap saling menghargai dan jadi teman yang baik.</p>
+</div>
+</div>
+
+<script>
+let page = 0;
+const pages = document.querySelectorAll(".page");
+const bar = document.getElementById("bar");
+
+function update() {
+  pages.forEach(p => p.classList.remove("active"));
+  pages[page].classList.add("active");
+  const persen = (page / (pages.length - 1)) * 100;
+  bar.style.width = persen + "%";
+}
+
+function nextPage() {
+  if (page < pages.length - 2) {
+    page++;
+    update();
+  }
+}
+
+function yes() {
+  page = pages.length - 2;
+  update();
+  for(let i = 0; i < 30; i++) setTimeout(createHeart, i * 100);
+}
+
+function nope() {
+  const tombol = document.getElementById("no");
+  tombol.innerText = "Yakin? 😭";
+  const x = Math.random() * 120 - 60;
+  const y = Math.random() * 60 - 30;
+  tombol.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerText = ["❤️","💗","💖","💕","💘"][Math.floor(Math.random()*5)];
+  heart.style.left = Math.random() * 95 + "vw";
+  heart.style.top = "-30px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 4000);
+}
+
+function loading() {
+  const load = document.getElementById("load");
+  const text = document.getElementById("loadingText");
+  let persen = 0;
+  const interval = setInterval(() => {
+    persen++;
+    load.style.width = persen + "%";
+    text.innerText = persen + "%";
+    if(persen >= 100) {
+      clearInterval(interval);
+      setTimeout(nextPage, 500);
+    }
+  }, 25);
+}
+
+function countdown() {
+  const count = document.getElementById("count");
+  let angka = 3;
+  const interval = setInterval(() => {
+    angka--;
+    if(angka > 0) count.innerText = angka;
+    if(angka === 0) {
+      count.innerText = "❤️";
+      clearInterval(interval);
+      setTimeout(nextPage, 800);
+    }
+  }, 1000);
+}
+
+update();
+</script>
+</body>
+</html>
